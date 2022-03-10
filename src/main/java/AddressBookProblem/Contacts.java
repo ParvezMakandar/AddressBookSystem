@@ -10,6 +10,21 @@ public class Contacts {
     private String phoneNumber;
     private String email;
 
+    @Override
+    public String toString() {
+        return "Contacts{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", address='" + address + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", zip=" + zip +
+                ", phoneNumber=" + phoneNumber +
+                ", email='" + email + '\'' +
+                '}';
+    }
+
+
     public String getFirstName() {
         return firstName;
     }
@@ -76,18 +91,5 @@ public class Contacts {
 
     protected void remove(Contacts contacts) {
 
-    }
-    @Override
-    public String toString() {
-        return "Contacts{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", address='" + address + '\'' +
-                ", city='" + city + '\'' +
-                ", state='" + state + '\'' +
-                ", zip=" + zip +
-                ", phoneNumber=" + phoneNumber +
-                ", email='" + email + '\'' +
-                '}';
     }
 }
