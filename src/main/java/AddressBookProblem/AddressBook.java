@@ -1,7 +1,10 @@
 package AddressBookProblem;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class AddressBook {
-    public static void main(String[] args) {
-        System.out.println("Welcome To Address Book System");
-    }
+    Scanner scan=new Scanner(System.in);
+    ArrayList<Contacts> list=new ArrayList<>();
+
 }
