@@ -6,21 +6,35 @@ import java.util.List;
 import java.util.Scanner;
 public class AddressBook {
     Scanner scan = new Scanner(System.in);
-    private final List<Contacts> list = new ArrayList<>();
-
+    public List<Contacts> list = new ArrayList<>();
     public void operation() {
+        System.out.println("Enter the number according to to requirment");
+        System.out.println("Enter 1 to Add");
+        System.out.println("Enter 2 to Edit");
+        System.out.println("Enter 3 to Delete");
+        int count = scan.nextInt();
+        AddressBook addressBook = new AddressBook();
+        int contactCount=1;
+        while(contactCount<=count) {
+
+            addressBook.add();
+            contactCount++;
+        }
         boolean status = true;
         do {
-            System.out.println("Enter the number according to to requirment");
-            System.out.println("Enter 1 to Add");
             switch (scan.nextInt()) {
                 case 1:
                     add();
                     break;
+                case 2:
+                    edit();
+                    break;
+                case 3:
+                    delete();
+                    break;
             }
         } while (status);
     }
-
     public void add() {
         Contacts contacts = new Contacts();
         System.out.println("Enter the First name:");
