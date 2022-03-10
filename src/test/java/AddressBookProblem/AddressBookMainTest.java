@@ -8,7 +8,7 @@ class AddressBookMainTest
     @Test
     public void shouldAnswerWithTrue()
     {
-        System.out.println("Adding multiple person to Address Book");
+        System.out.println("adding multiple Address Book to the System");
         assertTrue( true );
     }
 }
