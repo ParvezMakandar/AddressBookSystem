@@ -5,7 +5,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
-public class AddressBook {
+public class AddressBook
+{
     Scanner scan = new Scanner(System.in);
     private final List<Contacts> list = new ArrayList<>();
 
