@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
-
 public class AddressBook {
     Scanner scan = new Scanner(System.in);
     private final List<Contacts> list = new ArrayList<>();
@@ -101,6 +100,20 @@ public class AddressBook {
                         contacts.setEmail(scan.next());
                 }
 
+            }
+        }
+    }
+
+    public void delete() {
+        System.out.println("Enter your First name:");
+        String firstName = scan.next();
+
+        Iterator<Contacts> iterator = list.listIterator();
+        while (iterator.hasNext()) {
+            Contacts contacts = iterator.next();
+
+            if (firstName.equals(contacts.getFirstName())) {
+                list.remove(contacts);
             }
         }
     }
