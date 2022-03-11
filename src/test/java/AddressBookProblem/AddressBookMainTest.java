@@ -8,7 +8,7 @@ class AddressBookMainTest
     @Test
     public void shouldAnswerWithTrue()
     {
-        System.out.println("Sorting entries in the address book alphabetically");
+        System.out.println("Sorting entries in the address book by City,State or Zip");
         assertTrue( true );
     }
 }

@@ -19,4 +19,9 @@ public class Sort {
             return one.getFirstName().compareTo(two.getFirstName());
         }
     };
+    static Comparator<Contacts> compareZip = new Comparator<Contacts>() {
+        public int compare(Contacts one, Contacts two) {
+            return one.getZip().compareTo(two.getZip());
+        }
+    };
 }
