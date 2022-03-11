@@ -7,8 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 
 
-public class AddressBook
-{
+public class AddressBook {
     public List<Contacts> list = new ArrayList<>();
     Scanner scan = new Scanner(System.in);
 
@@ -148,9 +147,12 @@ public class AddressBook
     }
 
     public void countList() {
-        Long total;
-        total = list.stream().count();
+        Long total = list.stream().count();
         System.out.println(total);
+    }
+
+    public void sortByFirstName() {
+        Collections.sort(list, Sort.compareFirstName);
     }
 
     public void sortCity() {
