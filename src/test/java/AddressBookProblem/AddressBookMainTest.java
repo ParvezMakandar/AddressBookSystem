@@ -8,7 +8,7 @@ class AddressBookMainTest
     @Test
     public void shouldAnswerWithTrue()
     {
-        System.out.println("CHecking there is no Duplicate Entry");
+        System.out.println("Searching a  Person in a City or State");
         assertTrue( true );
     }
 }

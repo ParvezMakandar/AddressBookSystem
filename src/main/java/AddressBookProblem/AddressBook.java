@@ -1,9 +1,6 @@
 package AddressBookProblem;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class AddressBook {
     public List<Contacts> list = new ArrayList<>();
@@ -142,7 +139,10 @@ public class AddressBook {
         while (it.hasNext()) {
             System.out.println(it.next());
         }
+    } public void sortCity() {
+        Collections.sort(list, Sort.compareCity);
     }
+
     @Override
     public String toString() {
         return "AddressBook{" +
