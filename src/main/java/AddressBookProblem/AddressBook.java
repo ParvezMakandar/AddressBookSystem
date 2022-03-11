@@ -1,8 +1,14 @@
 package AddressBookProblem;
 
 import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Scanner;
 
-public class AddressBook {
+
+public class AddressBook
+{
     public List<Contacts> list = new ArrayList<>();
     Scanner scan = new Scanner(System.in);
 
@@ -139,14 +145,21 @@ public class AddressBook {
         while (it.hasNext()) {
             System.out.println(it.next());
         }
-    } public void sortCity() {
+    }
+
+    public void countList() {
+        Long total;
+        total = list.stream().count();
+        System.out.println(total);
+    }
+
+    public void sortCity() {
         Collections.sort(list, Sort.compareCity);
     }
 
     public void sortState() {
         Collections.sort(list, Sort.compareState);
     }
-
 
     @Override
     public String toString() {

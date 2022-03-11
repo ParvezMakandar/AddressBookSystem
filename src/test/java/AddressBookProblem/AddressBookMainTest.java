@@ -8,7 +8,7 @@ class AddressBookMainTest
     @Test
     public void shouldAnswerWithTrue()
     {
-        System.out.println("View Persons by City or State");
+        System.out.println("Searching By City And State");
         assertTrue( true );
     }
 }
