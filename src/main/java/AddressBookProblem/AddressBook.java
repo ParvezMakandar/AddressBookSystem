@@ -151,6 +151,10 @@ public class AddressBook {
         System.out.println(total);
     }
 
+    public void sortByZip() {
+        Collections.sort(list, Sort.compareZip);
+    }
+
     public void sortByFirstName() {
         Collections.sort(list, Sort.compareFirstName);
     }
