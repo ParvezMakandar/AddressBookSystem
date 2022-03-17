@@ -7,7 +7,6 @@ import java.util.stream.Collectors;
 public class AddressBookMain {
 
     public static List<Contacts> contactList = new ArrayList<Contacts>();
-
     public static Scanner scan = new Scanner(System.in);
 
     public static String firstname, lastname, address, email, city, state;
@@ -201,6 +200,7 @@ public class AddressBookMain {
         for (Map.Entry<String, Contacts> entry : sorted.entrySet())
             System.out.println("Key = " + entry.getKey() +
                     ", Value = " + entry.getValue());
+
     }
 
     private static void add_contact_to_list(int index) {
