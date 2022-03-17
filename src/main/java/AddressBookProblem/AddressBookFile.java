@@ -34,7 +34,7 @@ public class AddressBookFile {
         try {
             String file= address_book_file.getAbsolutePath();
             BufferedReader reader = new BufferedReader(new FileReader(file));
-            String line;
+            String line = null;
             while ((line = reader.readLine()) != null) {
                 System.out.println("\n"+line);
             }

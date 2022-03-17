@@ -1,6 +1,7 @@
 package AddressBookProblem;
 
-public class Contacts {
+public class Contacts
+{
     private String firstname;
     private String lastname;
     private String address;

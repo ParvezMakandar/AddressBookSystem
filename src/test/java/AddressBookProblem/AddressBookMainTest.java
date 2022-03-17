@@ -6,8 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class AddressBookMainTest
 {
     @Test
-    public void shouldAnswerWithTrue()
-    {
+    public void shouldAnswerWithTrue() {
         System.out.println("File I/O");
         assertTrue( true );
     }
