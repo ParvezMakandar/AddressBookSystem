@@ -1,96 +1,111 @@
 package AddressBookProblem;
 
-public class Contacts
-{
-    private String firstName;
-    private String lastName;
+public class Contacts {
+    private String firstname;
+    private String lastname;
     private String address;
     private String city;
     private String state;
-    private String zip;
-    private String phoneNumber;
+    private int zip;
+    private long phonenumber;
     private String email;
 
-    @Override
-    public String toString() {
-        return "Contacts{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", address='" + address + '\'' +
-                ", city='" + city + '\'' +
-                ", state='" + state + '\'' +
-                ", zip=" + zip +
-                ", phoneNumber=" + phoneNumber +
-                ", email='" + email + '\'' +
-                '}';
+
+    Contacts(String firstname, String lastname, String address, String city, String state, int zip, long phonenumber, String email) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.address = address;
+        this.city = city;
+        this.state = state;
+        this.zip = zip;
+        this.phonenumber = phonenumber;
+        this.email = email;
     }
 
 
-    public String getFirstName() {
-        return firstName;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public String setFirstname(String firstname) {
+        this.firstname = firstname;
+        return firstname;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public String setLastname(String lastname) {
+        this.lastname = lastname;
+        return lastname;
     }
 
     public String getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
+    public String setAddress(String address) {
         this.address = address;
+        return address;
     }
 
     public String getCity() {
         return city;
     }
 
-    public void setCity(String city) {
+    public String setCity(String city) {
         this.city = city;
+        return city;
     }
 
     public String getState() {
         return state;
     }
 
-    public void setState(String state) {
+    public String setState(String state) {
         this.state = state;
+        return state;
     }
 
-    public String getZip() {
+    public int getZip() {
         return zip;
     }
 
-    public void setZip(String zip) {
+    public int setZip(int zip) {
         this.zip = zip;
+        return zip;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public long getPhonenumber() {
+        return phonenumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public long setPhonenumber(long phonenumber) {
+        this.phonenumber = phonenumber;
+        return phonenumber;
     }
 
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
+    public String setEmail(String email) {
         this.email = email;
+        return email;
     }
 
-    protected void remove(Contacts contacts) {
-
+    @Override
+    public String toString() {
+        return "Contact{" +
+                "firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", address='" + address + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", zip=" + zip +
+                ", phonenumber=" + phonenumber +
+                ", email='" + email + '\'' +
+                '}';
     }
 }
