@@ -1,0 +1,6 @@
+
+personInfo [firstName=Parvez, lastName=Makandar, address=AzamNagar, city=Belgaum, state=Karnataka, zipcode=590010, phoneNumber=8147340746]
+
+
+personInfo [firstName=Faizan, lastName=Pathan, address=AzadNagar, city=Belgaum, state=Karnataka, zipcode=590016, phoneNumber=8660991625]
+

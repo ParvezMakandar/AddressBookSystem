@@ -1,13 +1,14 @@
 package AddressBookProblem;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
-class AddressBookMainTest
+public class AddressBookMainTest
 {
-    @Test
-    public void shouldAnswerWithTrue() {
-        System.out.println("File I/O");
-        assertTrue( true );
-    }
+        @Test
+        public void shouldAnswerWithTrue()
+        {
+            System.out.println("Address Book CSV Problem");
+            assertTrue( true );
+        }
 }
