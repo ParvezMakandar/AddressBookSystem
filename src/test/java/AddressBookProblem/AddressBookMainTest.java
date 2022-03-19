@@ -5,10 +5,10 @@ import org.junit.jupiter.api.Test;
 
 public class AddressBookMainTest
 {
-        @Test
-        public void shouldAnswerWithTrue()
-        {
-            System.out.println("Address Book CSV Problem");
-            assertTrue( true );
-        }
+    @Test
+    public void shouldAnswerWithTrue()
+    {
+        System.out.println("Address Book JSON Problem");
+        assertTrue( true );
+    }
 }
