@@ -2,18 +2,18 @@ package AddressBookProblem;
 
 import com.opencsv.exceptions.CsvDataTypeMismatchException;
 import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
+import com.opencsv.exceptions.CsvValidationException;
+
 import java.io.IOException;
 import java.util.*;
 
-public class AddressBookMainClass
-{
+public class AddressBookMainClass {
     public static Scanner sc = new Scanner(System.in);
     private static final AddressBookP addressBook = new AddressBookP();
     public Map<String, AddressBookP> addressBookListMap = new HashMap<>();
     int count;
 
-    public void addAddressBook(String bookName)
-    {
+    public void addAddressBook(String bookName) {
         boolean flag = true;
         while (flag) {
 
@@ -41,11 +41,9 @@ public class AddressBookMainClass
         System.out.println("Address Book Added Successfully");
     }
 
-    private void searchPersonByState(String stateName)
-    {
+    private void searchPersonByState(String stateName) {
         if (count > 0) {
-            for (Map.Entry<String, AddressBookP> entry : addressBookListMap.entrySet())
-            {
+            for (Map.Entry<String, AddressBookP> entry : addressBookListMap.entrySet()) {
                 AddressBookP value = entry.getValue();
                 System.out.println("The Address Book: " + entry.getKey());
                 value.getPersonNameByState(stateName);
@@ -55,11 +53,9 @@ public class AddressBookMainClass
         }
     }
 
-    private void searchPersonByCity(String cityName)
-    {
+    private void searchPersonByCity(String cityName) {
         if (count > 0) {
-            for (Map.Entry<String, AddressBookP> entry : addressBookListMap.entrySet())
-            {
+            for (Map.Entry<String, AddressBookP> entry : addressBookListMap.entrySet()) {
                 AddressBookP value = entry.getValue();
                 System.out.println("The Address Book: " + entry.getKey());
                 value.getPersonNameByCity(cityName);
@@ -69,11 +65,9 @@ public class AddressBookMainClass
         }
     }
 
-    private void viewPersonByState(String stateName)
-    {
+    private void viewPersonByState(String stateName) {
         if (count > 0) {
-            for (Map.Entry<String, AddressBookP> ignored : addressBookListMap.entrySet())
-            {
+            for (Map.Entry<String, AddressBookP> ignored : addressBookListMap.entrySet()) {
                 ArrayList<ContactPersons> contacts = AddressBookP.personByState.entrySet().stream()
                         .filter(findState -> findState.getKey().equals(stateName)).map(Map.Entry::getValue).findFirst()
                         .orElse(null);
@@ -87,17 +81,14 @@ public class AddressBookMainClass
         }
     }
 
-    private void viewPersonByCity(String cityName)
-    {
+    private void viewPersonByCity(String cityName) {
         if (count > 0) {
-            for (Map.Entry<String, AddressBookP> ignored : addressBookListMap.entrySet())
-            {
+            for (Map.Entry<String, AddressBookP> ignored : addressBookListMap.entrySet()) {
                 ArrayList<ContactPersons> contacts = AddressBookP.personByCity.entrySet().stream()
                         .filter(findCity -> findCity.getKey().equals(cityName)).map(Map.Entry::getValue).findFirst()
                         .orElse(null);
                 assert contacts != null;
-                for (ContactPersons contact : contacts)
-                {
+                for (ContactPersons contact : contacts) {
                     System.out.println("First Name: " + contact.getFirstName() + " Last Name: " + contact.getLastName());
                 }
             }
@@ -106,11 +97,9 @@ public class AddressBookMainClass
         }
     }
 
-    public void CountByState(String state)
-    {
+    public void CountByState(String state) {
         if (count > 0) {
-            for (Map.Entry<String, AddressBookP> ignored : addressBookListMap.entrySet())
-            {
+            for (Map.Entry<String, AddressBookP> ignored : addressBookListMap.entrySet()) {
                 for (int i = 0; i < AddressBookP.persons.size(); i++) {
 
                 }
@@ -121,12 +110,10 @@ public class AddressBookMainClass
         }
     }
 
-    public void CountByCity(String city)
-    {
+    public void CountByCity(String city) {
         int countPersonInCity = 0;
         if (count > 0) {
-            for (Map.Entry<String, AddressBookP> ignored : addressBookListMap.entrySet())
-            {
+            for (Map.Entry<String, AddressBookP> ignored : addressBookListMap.entrySet()) {
                 for (int i = 0; i < AddressBookP.persons.size(); i++) {
                     ContactPersons d = AddressBookP.persons.get(i);
 
@@ -141,11 +128,9 @@ public class AddressBookMainClass
         }
     }
 
-    private void sortByName()
-    {
+    private void sortByName() {
         if (count > 0) {
-            for (Map.Entry<String, AddressBookP> ignored : addressBookListMap.entrySet())
-            {
+            for (Map.Entry<String, AddressBookP> ignored : addressBookListMap.entrySet()) {
                 List<ContactPersons> sortedList = AddressBookP.persons.stream().sorted(Comparator.comparing(ContactPersons::getFirstName)).toList();
 
                 for (ContactPersons contact : sortedList) {
@@ -159,10 +144,8 @@ public class AddressBookMainClass
         }
     }
 
-    void sortByState()
-    {
-        for (Map.Entry<String, AddressBookP> ignored : addressBookListMap.entrySet())
-        {
+    void sortByState() {
+        for (Map.Entry<String, AddressBookP> ignored : addressBookListMap.entrySet()) {
             List<ContactPersons> sortedList = AddressBookP.persons.stream()
                     .sorted(Comparator.comparing(ContactPersons::getState)).toList();
 
@@ -174,15 +157,12 @@ public class AddressBookMainClass
         }
     }
 
-    public void sortByCity()
-    {
-        for (Map.Entry<String, AddressBookP> ignored : addressBookListMap.entrySet())
-        {
+    public void sortByCity() {
+        for (Map.Entry<String, AddressBookP> ignored : addressBookListMap.entrySet()) {
             List<ContactPersons> sortedList = AddressBookP.persons.stream()
                     .sorted(Comparator.comparing(ContactPersons::getCity)).toList();
 
-            for (ContactPersons contact : sortedList)
-            {
+            for (ContactPersons contact : sortedList) {
                 System.out.println("First Name: " + contact.getFirstName());
                 System.out.println("Last Name: " + contact.getLastName());
                 System.out.println("-------------------------------");
@@ -191,8 +171,7 @@ public class AddressBookMainClass
     }
 
     public void sortByZipCode() {
-        for (Map.Entry<String, AddressBookP> ignored : addressBookListMap.entrySet())
-        {
+        for (Map.Entry<String, AddressBookP> ignored : addressBookListMap.entrySet()) {
             List<ContactPersons> sortedList = AddressBookP.persons.stream()
                     .sorted(Comparator.comparing(ContactPersons::getZipCode)).toList();
 
@@ -205,14 +184,12 @@ public class AddressBookMainClass
     }
 
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         System.out.println("Welcome to the Address Book Management System using Java Stream");
         AddressBookMainClass addressBookClass = new AddressBookMainClass();
         boolean flag = true;
         while (flag) {
-            while (flag)
-            {
+            while (flag) {
                 System.out.println("1.Add New Address Book");
                 System.out.println("2.Search Contact from a city");
                 System.out.println("3.Search Contact from a State");
@@ -228,22 +205,23 @@ public class AddressBookMainClass
                 System.out.println("13.Read data from file");
                 System.out.println("14.Write Data in CSV file");
                 System.out.println("15.Read data from CSV file");
-                System.out.println("16.Exit");
+                System.out.println("16.Write Data in the Json file");
+                System.out.println("17.Read data from Json file ");
+                System.out.println("18.Exit");
 
                 System.out.println("Enter choice: ");
                 int option = sc.nextInt();
-                switch (option)
-                {
+                switch (option) {
                     case 1:
                         System.out.println("Enter the Name of Address Book: ");
                         String addressBookName = sc.next();
-                        if (addressBookClass.addressBookListMap.containsKey(addressBookName))
-                        {
+                        if (addressBookClass.addressBookListMap.containsKey(addressBookName)) {
                             System.out.println("The Address book Already Exists");
+                            break;
                         } else {
                             addressBookClass.addAddressBook(addressBookName);
+                            break;
                         }
-                        break;
 
                     case 2:
                         System.out.println("Enter Name of City: ");
@@ -310,8 +288,7 @@ public class AddressBookMainClass
                     case 14:
                         try {
                             AddressBookP.writeDataToCSV();
-                        } catch (IOException | CsvDataTypeMismatchException | CsvRequiredFieldEmptyException e)
-                        {
+                        } catch (IOException | CsvDataTypeMismatchException | CsvRequiredFieldEmptyException e) {
                             e.printStackTrace();
                         }
                         break;
@@ -319,12 +296,28 @@ public class AddressBookMainClass
                     case 15:
                         try {
                             AddressBookP.readDataUsingCSV();
-                        } catch (IOException e) {
+                        } catch (IOException | CsvValidationException e) {
                             e.printStackTrace();
                         }
                         break;
 
                     case 16:
+                        try {
+                            AddressBookP.writeDataInJSon();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        break;
+
+                    case 17:
+                        try {
+                            AddressBookP.readDataFromJson();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        break;
+
+                    case 18:
                         flag = false;
                         break;
                 }
