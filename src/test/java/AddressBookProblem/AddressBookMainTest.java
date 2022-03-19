@@ -8,7 +8,7 @@ public class AddressBookMainTest
     @Test
     public void shouldAnswerWithTrue()
     {
-        System.out.println("Address Book JSON Problem");
+        System.out.println("Address Book JSON Problem ");
         assertTrue( true );
     }
 }
