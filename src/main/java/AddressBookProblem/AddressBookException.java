@@ -1,10 +1,10 @@
 package AddressBookProblem;
 
 public class AddressBookException extends Throwable {
-    enum ExceptionType
-    {
+    enum ExceptionType {
         DatabaseException,
     }
+
     public ExceptionType type;
 
     public AddressBookException(String message, ExceptionType type) {

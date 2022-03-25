@@ -40,8 +40,8 @@ public class AddressBookData
 
     @Override
     public String toString() {
-        return "AddressBookData{" + "typeId=" + typeId + ", firstName='" + firstName + '\'' + ", lastName='"
-                + lastName + '\'' + ", phoneNumber='" + phoneNumber + '\'' + ", email='" + email + '\'' + ", city='"
-                + city + '\'' + ", state='" + state + '\'' + ", zip='" + zip + '\'' + '}';
+        return "AddressBookData{" + "typeId=" + typeId + ", firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' + ", email='" + email + '\'' + ", city='" + city + '\'' + ", state='" +
+                state + '\'' + ", zip='" + zip + '\'' + '}';
     }
 }

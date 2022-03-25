@@ -1,6 +1,7 @@
 package AddressBookProblem;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +25,7 @@ public class AddressBookDatabaseService {
     private Connection getConnection() throws SQLException {
         String jdbcURL = "jdbc:mysql://localhost:3306/address_book_service?useSSL=false";
         String userName = "root";
-        String password = "Kingofgoogle5";
+        String password = "root";
         connection = DriverManager.getConnection(jdbcURL, userName, password);
         System.out.println(connection + " connection successful");
         return connection;
@@ -99,5 +100,11 @@ public class AddressBookDatabaseService {
         }catch (SQLException e) {
             throw new AddressBookException(e.getMessage(), AddressBookException.ExceptionType.DatabaseException);
         }
+    }
+
+    public List<AddressBookData> getEmployeePayrollForDateRange(LocalDate startDate, LocalDate endDate) {
+        String query = String.format("SELECT * FROM addressbook WHERE date_added BETWEEN '%s' AND '%s';",
+                Date.valueOf(startDate), Date.valueOf(endDate));
+        return this.getAddressBookDataUsingDB(query);
     }
 }
