@@ -316,7 +316,6 @@ public class AddressBookMainClass {
                             e.printStackTrace();
                         }
                         break;
-
                     case 18:
                         flag = false;
                         break;
