@@ -2,8 +2,7 @@ package AddressBookProblem;
 
 import java.util.Objects;
 
-public class AddressBookData
-{
+public class AddressBookData {
     public String typeId;
     public String firstName;
     public String lastName;
@@ -27,7 +26,8 @@ public class AddressBookData
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof AddressBookData that)) return false;
+        if (!(o instanceof AddressBookData)) return false;
+        AddressBookData that = (AddressBookData) o;
         return  Objects.equals(typeId,that.typeId )&&
                 firstName.equals(that.firstName) &&
                 lastName.equals(that.lastName) &&
@@ -40,8 +40,15 @@ public class AddressBookData
 
     @Override
     public String toString() {
-        return "AddressBookData{" + "typeId=" + typeId + ", firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' + ", email='" + email + '\'' + ", city='" + city + '\'' + ", state='" +
-                state + '\'' + ", zip='" + zip + '\'' + '}';
+        return "AddressBookData{" +
+                "typeId=" + typeId +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", zip='" + zip + '\'' +
+                '}';
     }
 }
