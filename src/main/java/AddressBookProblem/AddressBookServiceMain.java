@@ -60,4 +60,11 @@ public class AddressBookServiceMain {
         }
         return null;
     }
+
+    public void addNewContact(String firstName, String lastName, String typeid,String phoneNumber, String city, String state,
+                              String zip, String email, LocalDate localDate) {
+        addressBookList.add(addressBookDBService.addNewContact(typeid, firstName, lastName,
+                phoneNumber,email,city,state,zip,localDate));
+    }
+
 }

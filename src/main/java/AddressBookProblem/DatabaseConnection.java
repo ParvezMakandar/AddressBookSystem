@@ -10,7 +10,7 @@ public class DatabaseConnection {
 
         String jdbcURL = "jdbc:mysql://localhost:3306/address_book_service?useSSL=false";
         String userName = "root";
-        String password = "Kingofgoogle5";
+        String password = "root";
         Connection connection;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
