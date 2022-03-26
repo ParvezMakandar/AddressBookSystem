@@ -1,6 +1,7 @@
 package AddressBookProblem;
 
-public class AddressBookException extends Throwable {
+public class AddressBookException extends Throwable
+{
     enum ExceptionType {
         DatabaseException,
     }

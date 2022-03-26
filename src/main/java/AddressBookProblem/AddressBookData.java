@@ -1,5 +1,6 @@
 package AddressBookProblem;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
 public class AddressBookData {
@@ -12,7 +13,8 @@ public class AddressBookData {
     public String state;
     public String zip;
 
-    public AddressBookData( String typeId, String firstName, String lastName, String phoneNumber, String email, String city, String state, String zip) {
+    public AddressBookData(String typeId, String firstName, String lastName, String phoneNumber, String email,
+                           String city, String state, String zip, LocalDate date_added) {
         this.typeId = typeId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -26,8 +28,7 @@ public class AddressBookData {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof AddressBookData)) return false;
-        AddressBookData that = (AddressBookData) o;
+        if (!(o instanceof AddressBookData that)) return false;
         return  Objects.equals(typeId,that.typeId )&&
                 firstName.equals(that.firstName) &&
                 lastName.equals(that.lastName) &&
@@ -40,15 +41,8 @@ public class AddressBookData {
 
     @Override
     public String toString() {
-        return "AddressBookData{" +
-                "typeId=" + typeId +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", email='" + email + '\'' +
-                ", city='" + city + '\'' +
-                ", state='" + state + '\'' +
-                ", zip='" + zip + '\'' +
-                '}';
+        return "AddressBookData{" + "typeId=" + typeId + ", firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' + ", email='" + email + '\'' + ", city='" + city + '\'' + ", state='" + state + '\'' +
+                ", zip='" + zip + '\'' + '}';
     }
 }
